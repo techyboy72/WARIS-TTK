@@ -316,7 +316,7 @@ async def check_link(msg,rclone=False,is_zip=False, extract=False, prev_msg=None
                         torlog.exception("exception in direct links.")
 
                     await ul_task.set_inactive()
-                    await print_files(omess,rdict,dl_task.hash, path = dl_path, size=ul_size)
+                    await print_files(omess,rdict, path = path, size=ul_size)
                     torlog.info("here are the files to be uploaded {}".format(rdict))
                 else:
                     res = await rclone_driver(path,rmsg, omess, dl_task)
